@@ -67,7 +67,6 @@ export const CompGrafica = () => {
             input: fx.input + input,
             math: fx.math + math
             })
-            console.log(fx)
         return
     }
 
@@ -80,7 +79,6 @@ export const CompGrafica = () => {
                 math: fx.math.slice(0, -1)
             })
         }
-        console.log(fx)
         return
     }
 
@@ -96,7 +94,6 @@ export const CompGrafica = () => {
     const igual = () => {
         try {
             validar()
-            console.log(fx.math)
             let resultado = eval(fx.math)
             setOp([
                 ...op,
@@ -116,7 +113,6 @@ export const CompGrafica = () => {
                 input:"("+fx.input+")",
                 math:"("+fx.math+")"
             })
-            console.log(fx)
             return  
         } catch (error) {
             setError(["Error al agregar parentesis"])
