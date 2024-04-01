@@ -8,6 +8,7 @@
 }
 
 :root {
+  width: 100%;
   line-height: 1.5;
 
   font-synthesis: none;
@@ -16,7 +17,6 @@
   -moz-osx-font-smoothing: grayscale;
 
   background-color: #1E1E1E;
-  width: 100%;
   display: flex;
   justify-content: center;
   text-align: center;

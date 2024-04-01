@@ -27,7 +27,7 @@ export const CompGrafica = () => {
                     grafica = new Grafica("grafica", 50)
                     grafica.createRect(0,0,grafica.width, grafica.height,"white")
                     grafica.planoCartesiano()
-                    trazos ? trazos.forEach(t => grafica.trazar(t.trazoMath,10,0.05,t.color)) : setTrazos([{}])
+                    trazos ? trazos.forEach(t => grafica.trazar(t.trazoMath,10,0.05,t.color)) : setTrazos([])
                     setInit(true)
                 } catch (error) {
                     trazos ? setTrazos(
@@ -144,16 +144,25 @@ export const CompGrafica = () => {
         return
     }
 
+    const closeError = () => {
+        setError([])
+    }
+
 
 
     return (
         <div className="contenedor-grafica">
             <h1>Graficar Funciones</h1>
             <div className="graficador">
+                {error ? error.map(er => (
+                    <div key={Math.random() *1000} style={{position: "absolute", margin:10, zIndex:100, top:200, background: "gray", borderRadius: "5px", width: 200, height: 100, border: "0.5px solid black", textAlign: "center"}}>
+                        <p style={{color: "white"}}>
+                            {er}
+                        </p>
+                        <button className="code-button" onClick={closeError}>close</button>
+                    </div>
+                )) : null}
                 <div className="calculadora">
-                    {error ? error.map(er => (
-                        <span key={Math.random() *1000} style={{position: "relative", color: "red", margin:10}}>{er}</span>
-                    )) : null}
                     <input style={{gridArea: "input"}} className="input" type="text" value={Object.values(fx.input).join("")} disabled />
                     {mathFuncs.map(operacion => (
                         <button key={Math.random()*1000} style={{gridArea: operacion}} className={operacion + " math"} onClick={() => handleValue(operacion+"(", "Math."+operacion+"(")}>{operacion+"()"}</button>
