@@ -155,7 +155,7 @@ export const CompGrafica = () => {
             <h1>Graficar Funciones</h1>
             <div className="graficador">
                 {error ? error.map(er => (
-                    <div key={Math.random() *1000} style={{position: "absolute", margin:10, zIndex:100, top:"30%", background: "gray", borderRadius: "5px", width: 200, height: 100, border: "0.5px solid black", textAlign: "center"}}>
+                    <div key={Math.random() *1000} style={{position: "absolute", margin:"10", zIndex:"100", top:"30%", background: "gray", borderRadius: "5px", width: "200", border: "0.5px solid black", textAlign: "center"}}>
                         <p style={{color: "white"}}>
                             {er}
                         </p>
@@ -193,10 +193,10 @@ export const CompGrafica = () => {
                     </div>
                 </div>
                 <div className="canva">
-                    <canvas id={"grafica"} className="plano" width={1000} height={1000}></canvas>
+                    <canvas id={"grafica"} className="plano" width={"1000"} height={"1000"}></canvas>
                 </div>
-                <div className="lista-graficas" style={{width: 300}}>
-                    <div style={{margin:20, fontSize: 28, width:300}}>
+                <div className="lista-graficas" style={{width: "300"}}>
+                    <div style={{margin:"20", fontSize: "28", width:"300"}}>
                         <h4>Graficas</h4>
                         <ul >
                             {trazos ? trazos.map(t => (
