@@ -155,7 +155,7 @@ export const CompGrafica = () => {
             <h1>Graficar Funciones</h1>
             <div className="graficador">
                 {error ? error.map(er => (
-                    <div key={Math.random() *1000} style={{position: "absolute", margin:10, zIndex:100, top:200, background: "gray", borderRadius: "5px", width: 200, height: 100, border: "0.5px solid black", textAlign: "center"}}>
+                    <div key={Math.random() *1000} style={{position: "absolute", margin:10, zIndex:100, top:"30%", background: "gray", borderRadius: "5px", width: 200, height: 100, border: "0.5px solid black", textAlign: "center"}}>
                         <p style={{color: "white"}}>
                             {er}
                         </p>
