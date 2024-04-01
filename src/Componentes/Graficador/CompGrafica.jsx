@@ -184,9 +184,9 @@ export const CompGrafica = () => {
                     <div style={{margin: "20", display: (op.length > 0 ? "block" : "none"), width: "100%"}}>
                         <h3>Resultados</h3>
                         <ul>
-                            {op.map(o => (
+                            {op.map(historial => (
                                 <li key={Math.random()*1000} style={{color: "white"}}>
-                                    {o.operacion + " igual a " + o.result}
+                                    {historial.operacion + " = " + historial.result}
                                 </li>
                             ))}
                         </ul>
