@@ -181,7 +181,7 @@ export const CompGrafica = () => {
                     <button className="eval" style={{gridArea: "eval"}} onClick={trazar}>Graficar</button>
                     <button className="igual" style={{gridArea: "igual"}} onClick={igual}>=</button>
                     <button className="parentesis" style={{gridArea: "prtss"}} onClick={parentesis}>{"(encerrar)"}</button>
-                    <div style={{margin: 20, display: (op.length > 0 ? "block" : "none"), width: "100%"}}>
+                    <div style={{margin: "20", display: (op.length > 0 ? "block" : "none"), width: "100%"}}>
                         <h3>Resultados</h3>
                         <ul>
                             {op.map(o => (
