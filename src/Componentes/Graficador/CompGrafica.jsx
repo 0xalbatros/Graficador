@@ -98,7 +98,7 @@ export const CompGrafica = () => {
             setOp([
                 ...op,
                 {operacion: fx.input,
-                result: resultado}
+                result: new String(resultado)}
             ])
             return 
         } catch (error) {
@@ -151,7 +151,7 @@ export const CompGrafica = () => {
             <h1>Graficar Funciones</h1>
             <div className="graficador">
                 {error ? error.map(er => (
-                    <div key={Math.random() *1000} style={{position: "absolute", margin:"10", zIndex:"100", top:"30%", background: "gray", borderRadius: "5px", width: "200", border: "0.5px solid black", textAlign: "center"}}>
+                    <div key={Math.random() *1000} style={{position: "absolute", margin:"10", zIndex:"100", top:"30%", background: "gray", borderRadius: "5px", width: "600", border: "0.5px solid black", textAlign: "center"}}>
                         <p style={{color: "white"}}>
                             {er}
                         </p>
