@@ -11,7 +11,15 @@ export const CompGrafica = () => {
     let [fx, setFx] = useState({input:"", math:""})
     let [error, setError] = useState([])
     let [init, setInit]= useState(false)
-    let [trazos, setTrazos]= useState(JSON.parse(localStorage.getItem("trazos")))
+    let [trazos, setTrazos]= useState([
+        {trazoMath: "(2*x)/(Math.sqrt(3*x-1))", trazoInput: "2x/(sqrt(3x-1))", color: `rgb(100,${Math.ceil((Math.random()*0.4) * 255)},${Math.ceil((Math.random()*0.4) * 255)} )`},
+        {trazoMath: "0.5*x-4", trazoInput: "0.5x-4", color: `rgb(100,${Math.ceil((Math.random()*0.4) * 255)},${Math.ceil((Math.random()*0.4) * 255)} )`},
+        {trazoMath: "-2*x+7", trazoInput: "-2x+7", color: `rgb(100,${Math.ceil((Math.random()*0.4) * 255)},${Math.ceil((Math.random()*0.4) * 255)} )`},
+        {trazoMath: "2 -Math.sin(x)+3", trazoInput: "2-sin(x)+3", color: `rgb(100,${Math.ceil((Math.random()*0.4) * 255)},${Math.ceil((Math.random()*0.4) * 255)} )`},
+        {trazoMath: "2 -Math.sin(x-3)", trazoInput: "2-sin(x-3)", color: `rgb(100,${Math.ceil((Math.random()*0.4) * 255)},${Math.ceil((Math.random()*0.4) * 255)} )`},
+        {trazoMath: "0.3*(2-Math.sin(x))", trazoInput: "0.3*(2-sin(x))", color: `rgb(100,${Math.ceil((Math.random()*0.4) * 255)},${Math.ceil((Math.random()*0.4) * 255)} )`},
+        {trazoMath: "2-Math.sin(x*0.3)", trazoInput: "2-sin(x*0.3)", color: `rgb(100,${Math.ceil((Math.random()*0.4) * 255)},${Math.ceil((Math.random()*0.4) * 255)} )`},
+    ])
     let [op, setOp] = useState([])
     let grafica
     
@@ -52,7 +60,7 @@ export const CompGrafica = () => {
             if(trazos.some(t => t.trazoMath === fx.math)){
                 throw new Error("Grafico repetido")
             }else{
-                setTrazos([...trazos, {trazoMath: fx.math, trazoInput: fx.input, color: `rgb(25,${Math.ceil((Math.random()*0.2) * 255)},${Math.ceil((Math.random()*0.2) * 255)} )`}])
+                setTrazos([...trazos, {trazoMath: fx.math, trazoInput: fx.input, color: `rgb(100,${Math.ceil((Math.random()*0.4) * 255)},${Math.ceil((Math.random()*0.4) * 255)} )`}])
                 setInit(false)
             }
         } catch (error) {
