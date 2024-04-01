@@ -186,7 +186,7 @@ export const CompGrafica = () => {
                         <ul>
                             {op.map(o => (
                                 <li key={Math.random()*1000} style={{color: "white"}}>
-                                    {o.operacion + " = " + o.result}
+                                    {o.operacion + " igual a " + o.result}
                                 </li>
                             ))}
                         </ul>
